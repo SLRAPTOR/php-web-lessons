@@ -1,5 +1,6 @@
 <?php
-include './action/dbconnection.php';
+include './actions/dbconnection.php';
+
 
 $query = "SELECT * FROM product_category";
 $result = $conn->query($query);
@@ -21,7 +22,7 @@ $result = $conn->query($query);
             }
             ?>
             <h2>product manager</h2>
-            <form action="action/saveproduct.php" method="post" enctype="multipart/form-data">
+            <form action="actions/saveproduct.php" method="post" enctype="multipart/form-data">
                 <table border="1">
 
                     <tbody>
@@ -45,15 +46,6 @@ $result = $conn->query($query);
                             <td>qty</td>
                             <td><input type="text" name="product_qty" value="" /></td>
                         </tr>
-                        
-                         <tr>
-                            <td>status</td>
-                            <td><select name="status">
-                                    <option value="1">active</option>
-                                    <option value="0">inactive</option>
-                                </select></td>
-                        </tr>
-                        
                         <tr>
                             <td>product image</td>
                             <td><input type="file" name="product_image" value=""></td>
@@ -66,7 +58,7 @@ $result = $conn->query($query);
                                     if ($result->num_rows > 0) {
                                         while($row = $result->fetch_assoc()) {
                                             ?>
-                                    <option value="<?php echo $row['idproduct_category']?>"><?php echo $row  ['category_name']?></option>
+                                    <option value="<?php echo $row['id_product_category']?>"><?php echo $row  ['category_name']?></option>
                                             <?php
                                         }
                                     }
@@ -74,7 +66,13 @@ $result = $conn->query($query);
                                 </select></td>
                         </tr>
 
-                       
+                        <tr>
+                            <td>status</td>
+                            <td><select name="status">
+                                    <option value="1">active</option>
+                                    <option value="0">inactive</option>
+                                </select></td>
+                        </tr>
 
                         <tr>
                             <td></td>
