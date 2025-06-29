@@ -1,5 +1,8 @@
 <?php
-session_start()
+session_start();
+
+include './actions/dbconnection.php';
+
 ?>
 
 
@@ -22,45 +25,82 @@ session_start()
         <table>
 
             <?php
-            if (isset($_SESSION['cart'])) {
+
+            $totalAmou=0.0;
+
+            $isProduct=FALSE;
+
+                if (isset($_SESSION['cart'])) {
+                    $cart = $_SESSION['cart'];
+                    foreach ($cart as $cartItem) {
+
+                        $productQuery = "SELECT * FROM products WHERE id_products = '" . $cartItem[0] . "'";
+                        $result = $conn->query($productQuery);
 
 
-                $cart = $_SESSION['cart'];
+                        
 
-                foreach ($cart as $cartItem) {
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
 
-                    <tr>
-                    <td> <?php echo $row['id_products'];
-                    ?></td>
 
-                <td> <?php echo $row['id_products']; ?></td>
+                            $rowamu=($row['sell_price']*$cartItem['1'] );
 
-                <td> <?php echo $row['id_products']; ?></td>
 
-                <td> <?php echo $row['id_products']; ?></td>
+                            $totalAmou= $totalAmou+$rowamu;
 
-            </tr>     
+                            $isProduct=TRUE;
+                                ?>
+
+
+                        <tr>
+                            <td> <?php echo $cartItem[0]; ?></td>
+
+                            <td> <img src="<?php echo "actions/" . $row["product_profile_image"]; ?>" width="90" height="90">
+                            </td>
+
+                            <td> <?php echo $row['product_name']; ?></td>
+
+                            <td> <?php echo $row['product_description']; ?></td>
+
+
+
+                            <td> <?php echo $row['sell_price'] ?></td>
+
+
+                            <td> <?php echo $cartItem['1'] ?></td>
+
+
+                            <td> <?php echo ($rowamu) ;?></td>
+
+                           <!-- <td> <input type="text" name="product_sell_price" value="product_sell_price"></td>-->
+
+
+                            <td> <input type="text" name="product_qty" value="<?php echo $cartItem[1]; ?>"></td>
+
+                            <td> <a href="actions/removeFromCart.php?pid=<?php echo $cartItem[0]; ?>"> <input type="button"  value="Remove"> </a>  </td>
+
+
+                        </tr>  
+
+                        <?php
+                    }
+                }
+            } 
+
+            if (!$isProduct) {
+                echo "cart empty";
             }
-
             ?>
-
-
-
-
-
-
-
-
-
-
 
         </table>
         <br>
-        <label>Total:</label>
+        <label>Total: <?php echo $totalAmou ?></label>
+        <a href="checkout.php"><input type="submit" value="checkout"></a>
 
 
         <?php
-        include './footer.phpfooter.php';
+        #include './footer.phpfooter.php';
         ?>
-</body>
+    </body>
 </html>
