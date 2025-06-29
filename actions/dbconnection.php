@@ -1,7 +1,7 @@
 <?php
 $username ="root";
 $password ="pasindu12236";
-$database ="codefest";
+$database ="codefest_test";
 $host ="localhost";
 $port = "3307";
 
@@ -12,6 +12,3 @@ if ($conn->connect_error) {
 }else{
     echo 'connected';
 }
-?>
-
-

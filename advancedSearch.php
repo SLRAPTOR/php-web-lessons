@@ -71,7 +71,9 @@ if (isset($_GET['selectedCategory'])) {
                             <p><?php echo "Sell price:- ". $row["sell_price"]; ?></p>
                             
                         </td>
-                        <td><input type="submit" value="Add to cart" /></td>
+                        <td>
+                        <a href="viweproductdetails.php?pid=<?php echo $row['id_products']?>"><input type="button" value="view Details" /></a>
+                        <input type="submit" value="Add to cart" /></td>
                     </tr>
                     <?php
                 }
