@@ -74,8 +74,10 @@ if (isset($_GET['selectedCategory'])) {
 
                         </td>
                         <td>
-                            <a href="viweproductdetails.php?pid=<?php echo $row['id_products'] ?>"><input type="button" value="view Details" /></a>
-                            <input type="submit" value="Add to cart" /></td>
+                          <a href="viweproductdetails.php?pid=<?php echo $row['id_products']; ?>">
+    <button type="button">View Details</button>
+</a>
+
                     </tr>
                     <?php
                 }
