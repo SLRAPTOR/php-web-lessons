@@ -8,7 +8,21 @@ if(isset($_GET['pid'])){$productId =$_GET['pid'];}
 
 
 if(isset($_POST['pid'])){$productId =$_POST['pid'];}
+
 if ($productId==""){    header("Location: ../index.php?msg=incorrect product ");die();}
+
+// If in a subfolder (e.g., "php/")
+elseif ($productId == "") {
+    header("Location: ../index.php?msg=incorrect product ");
+    die();
+}
+
+// OR if in same folder as index.php
+elseif ($productId == "") {
+    header("Location: index.php?msg=incorrect product ");
+    die();
+}
+
 
 
 $cart;
