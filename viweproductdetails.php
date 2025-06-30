@@ -22,7 +22,6 @@ $imageURL = "";
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-
     $name = $row["product_name"];
     $disc = $row["product_description"];
     $pric = $row["sell_price"];
@@ -46,7 +45,7 @@ if ($result->num_rows > 0) {
 <table>
     <tr>
         <td>
-            <img src="actions/<?php echo $imageURL; ?>" alt="img" width="400" height="400">
+            <img src="actions/<?php echo htmlspecialchars($imageURL); ?>" alt="img" width="400" height="400">
         </td>
         <td>
             <h2><?php echo htmlspecialchars($name); ?></h2>
