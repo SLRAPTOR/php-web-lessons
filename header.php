@@ -23,8 +23,13 @@
     <div style="width:25%" ><h2>CODEFEST-2021</h2></div>
     <div style="width:60%">
         <ul class="menu">
-            <li>home</li>
-            <li>advanced search</li>
+
+
+<a href="index.php"><li>home</li></a>
+
+<a href="advancedSearch.php"><li>search</li></a>
+            
+            
             <li>about us</li>
             <li>contact us</li>
         </ul>
