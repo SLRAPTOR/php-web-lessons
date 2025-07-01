@@ -1,7 +1,7 @@
 <?php
 include './actions/dbconnection.php';
 
-include './actions/error_handlling.php';
+
 
 $query = "SELECT * FROM products";
 $result = $conn->query($query);
@@ -51,7 +51,7 @@ $result = $conn->query($query);
                                     <td><?php echo $row["id_products"]; ?></td>
                                     <td><input type="text" name="product_name" value="<?php echo $row["product_name"]; ?>" /></td>
                                     <td><input type="text" name="product_desc" value="<?php echo $row['product_description']; ?>" /></td>
-                                    <td><input type="text" name="product_buy_price" value="<?php echo $row["by_price"]; ?>" /></td>
+                                    <td><input type="text" name="product_buy_price" value="<?php echo $row["buy_price"]; ?>" /></td>
                                     <td><input type="text" name="product_sell_price" value="<?php echo $row["sell_price"]; ?>" /></td>
                                     <td><input type="text" name="product_qty" value="<?php echo $row["avl_qty"]; ?>" /></td>
                                     <td><select name="category">

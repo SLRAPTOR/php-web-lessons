@@ -6,65 +6,67 @@ include './actions/dbconnection.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Shopping Cart</title>
+        <title></title>
     </head>
     <body>
-        <?php include './header.php'; ?>
-        <h2>Shopping Cart</h2>
-        <table border="1" cellpadding="10">
-            <tr>
-                <th>ID</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th>Remove</th>
-            </tr>
-            <?php
-            $totalAmou = 0.0;
-            $isProduct = false;
+        <?php
+        include './actions/header.php';
+        ?>
 
-            if (isset($_SESSION['cart'])) {
-                $cart = $_SESSION['cart'];
-                foreach ($cart as $cartItem) {
-                    $productQuery = "SELECT * FROM products WHERE id_products = '" . $cartItem[0] . "'";
-                    $result = $conn->query($productQuery);
+        <div align="center">
+            <h2>shopping cart</h2>
+            <table border="1">
+                <?php
+                $totalAmu =0.0;
+                $isProduct=false;
+                
+                if (isset($_SESSION['cart'])) {
+                    $cart = $_SESSION['cart'];
+                    foreach ($cart as $cartItem) {
 
-                    if ($result && $result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        $rowamu = ($row['sell_price'] * $cartItem[1]);
-                        $totalAmou += $rowamu;
-                        $isProduct = true;
-                        ?>
-                        <tr>
-                            <td><?php echo $cartItem[0]; ?></td>
-                            <td><img src="<?php echo "actions/" . $row["product_profile_image"]; ?>" width="90" height="90"></td>
-                            <td><?php echo $row['product_name']; ?></td>
-                            <td><?php echo $row['product_description']; ?></td>
-                            <td><?php echo $row['sell_price']; ?></td>
-                            <td><?php echo $cartItem[1]; ?></td>
-                            <td><?php echo $rowamu; ?></td>
-                            <td>
-                                <a href="actions/removeFromCart.php?pid=<?php echo $cartItem[0]; ?>">
-                                    <input type="button" value="Remove">
-                                </a>
-                            </td>
-                        </tr>
-                        <?php
+                        $productQuery = "SELECT * FROM products WHERE id_products = '" . $cartItem[0] . "'";
+                        $result = $conn->query($productQuery);
+                        
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                            $rowAmu=($row['sell_price']*$cartItem[1]);
+                            $totalAmu=$totalAmu+$rowAmu;
+                            $isProduct=true;
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $cartItem[0];   ?></td>
+                                    <td><img src="<?php echo "actions/" . $row["product_profile_image"]; ?>" width="90" height="90"></td>
+                                    <td><?php echo $row["product_name"];   ?></td>
+                                    <td><?php echo $row['product_description'];   ?></td>
+                                    <td><?php echo $row["sell_price"];   ?></td>
+                                    <td><?php echo $cartItem[1]; ?></td>
+                                    <td><?php echo $row["sell_price"];   ?> *<?php echo $cartItem[1]; ?></td>
+                                   
+                                    <td><a href="actions/removeFromCart.php?pid=<?php echo $cartItem[0]; ?>">
+                                            <input type="button" value="remove" /></a></td>
+                                </tr>
+
+                                <?php
                     }
-                }
-            }
+                    
+                        }
+                        } else {
+                            echo 'cart empty';
+                        }
+                        if (!$isProduct) {
+                            echo 'cart empty';
+    
+}
+                        ?>
+                    </table>
+                    <br>
+                    <label>total:<?php echo $totalAmu ;   ?> </label>
+                    <a href="chechout.php"> <input type="submit" value="checkout" name="checkout"/></a>
 
-            if (!$isProduct) {
-                echo "<tr><td colspan='8'>Cart is empty.</td></tr>";
-            }
-            ?>
-        </table>
-        <br>
-        <label>Total: <?php echo $totalAmou ?></label>
-        <a href="checkout.php"><input type="button" value="Checkout"></a>
-        <?php # include './footer.php'; ?>
+                </div>
+        <?php
+        include './actions/footer.php';
+        ?>
     </body>
 </html>
