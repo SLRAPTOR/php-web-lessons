@@ -1,30 +1,24 @@
 <?php
 session_start();
-
 $productId="";
+if(isset($_POST['pid'])){$productId  = $_POST['pid'];}
+if(isset($_GET['pid'])){$productId  = $_GET['pid'];}
 
-if (isset($_GET['pid'])) {
-    $productId = $_GET['pid'];
-}
-if (isset($_POST['pid'])) {
-    $productId = $_POST['pid'];
-}
-
-if ($productId == "") {
-   header("Location:../index.php?msg=Wrong feed @ cart page");   die();
-    die();
-}
+if($productId==""){header("Location: ../index.php?msg=Wrong Feed @ Cart page");die();}
 $cart;
-if (isset($_SESSION['cart'])) {
-    $cart=$_SESSION['cart'];
+if(isset($_SESSION['cart'])){
+    $cart = $_SESSION['cart'];
 }else{
-    $cart=array();
+    $cart = array();
 }
-foreach ($cart as $key =>$value) {
-    if ($value[0]==$productId) {
+
+foreach ($cart as $key => $value){
+    if($value[0]==$productId){
         unset($cart[$key]);
     }
 }
 
-$_SESSION['cart']=$cart;
-header("Location:../cart.php");
+
+
+$_SESSION['cart'] = $cart;
+header("Location: ../cart.php");
