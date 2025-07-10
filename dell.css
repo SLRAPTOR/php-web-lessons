@@ -1,0 +1,172 @@
+
+
+
+.dvi-1{
+    margin-top:150px;/*slide show box ekay hadan code eka*/
+    height:400px;
+    width:25%;
+    
+}
+
+.fo{
+    font-family: Arial Rounded MT; /*font hadan eka*/
+    font-size: 18px;
+    color: #999999;
+}
+.fo1{
+    color: #006666;
+    font-size: 24px;
+    font-family: Arial Rounded MT; 
+    font-weight: bold;
+    
+}
+
+.t-respo{           /*table responsive karan eka*/
+    width: 100%;
+
+}
+
+.hedder{                /* mekat kanathi ekak dann*/
+    height: 100px;
+}
+
+.asus-1{
+    background-image: url('asus_1.jpg');  /*asus lap link kara part eka*/
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.asus-2{
+    background-image: url('asus_2.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.asus-3{
+    background-image: url('asus_3.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.asus-4{
+    background-image: url('asus_4.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+.sb1{                       /*button walat style dan part eka*/
+    border:solid;
+    display: inline-block;
+    height: 50px;
+    width:60%;
+    font-size:20x;
+    cursor:pointer;
+    color: white;
+    outline: none;
+    font-weight: bold;
+    background-color: #006666;
+    border: none;
+   
+}
+.sb1:hover{
+    background-color:#009999;
+    color:whitesmoke;
+    border-color:white;
+}
+
+.sb2{
+    border:solid;
+    display: inline-block;
+    height: 50px;
+    width:60%;
+    font-size:20x;
+    cursor:pointer;
+    color: whitesmoke;
+    outline: none;
+    font-weight: bold;
+    background-color: #cc0000;
+    border: none;
+}
+.sb2:hover{
+    background-color: #ff3333;
+    color:#whitesmoke;
+   
+}
+
+.hp-1{                              /*hp lap link kara part eka*/
+    background-image: url('hp_1.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.hp-2{
+    background-image: url('hp_2.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.hp-3{
+    background-image: url('hp_3.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.hp-4{
+    background-image: url('hp_4.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+
+.hp-5{
+    background-image: url('hp_5.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+
+.hp-6{
+    background-image: url('hp_6.jpg');
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+    
+
+
+
+
+
+.dell-1{                                    /*dell lap link kara part eka*/
+    background-image: url("PngItem_1871245.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.dell-2{
+    background-image: url("PngItem_2291823.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.dell-3{
+    background-image: url("PngItem_2291833.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+.dell-4{
+    background-image: url("PngItem_688735.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+
+.dell-5{
+    background-image: url("PngItem_2978265 (2).png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    
+}
+
+    
+
+.GIANG{
+    left: 1000px;
+}

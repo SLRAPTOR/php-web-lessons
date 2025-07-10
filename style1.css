@@ -1,0 +1,182 @@
+.search{
+    width: 900px;
+    height: 30px;
+    margin-left: 200px;
+    margin-top: 30px;
+    background-color: #ccccff;
+    border: none;
+}
+.head{
+    font-size: 28px;
+    color:whitesmoke;
+    font-family: Broadway;
+}
+
+.button2
+{
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial Rounded MT;
+    background-color:whitesmoke;
+    border : none;
+    outline: none;
+    color: #009999;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+    outline: none;
+    margin-left: 40px;
+    
+    
+    
+}
+.button2:hover{
+   
+   cursor: pointer;
+   color:whitesmoke;
+   background-color: #006666;
+   border:none;
+}
+
+.button1{
+    margin-top: 27px;
+    margin-left: 10px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial Rounded MT;
+    color: white;
+    background-color:#006666;
+    border : none;
+    outline: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: absolute;
+    
+}
+.button1:hover{
+   
+   cursor: pointer;
+   color:#006666;
+   background-color: white;
+   border:solid #006666;
+}
+
+.txt{
+    color: black;
+    font-size: 18px;
+    font-family: Arial Rounded MT;
+    font-weight: bolder;
+}
+
+
+.div1{
+   
+    width: 400;;
+    height: 400px;
+    border: threeddarkshadow;
+    
+    
+}
+.div1:hover{
+   
+   cursor: pointer;
+   background-color:white;
+   color: navy;
+  
+}
+
+
+.div2{
+
+     width: 400px;
+    height: 400px;
+}
+
+.div3{
+   
+    width:400px;
+    height: 400px;
+}
+.t{
+    margin-top: 0;
+    margin-left: 30px;
+    
+    
+}
+.im1{
+    width: 200px;
+    height: 200px;
+   margin-left: 0px;
+    
+}
+
+.tbl{
+    margin-top: 0;
+}
+
+.header {
+  overflow: hidden;
+  padding: 20px 10px;
+  height: 200px;
+  background-color: #009999;
+  
+}
+
+.button3{
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    border: none;
+    margin-left: 20px;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    border-radius: 30px;
+}
+
+.button3:hover{
+     box-shadow: -5px -5px 5px #ffffff0d,
+    5px 5px 5px #000000a6,
+    10px 10px 10px #000000a6,
+    15px 15px 15px #000000a6,
+    20px 20px 20px #000000a6;
+}
+
+.textb{
+    width: 900px;
+    margin-top: 30px;
+    margin-left: 200px;
+    height: 30px;
+    border: none;
+    outline: none;
+    
+    
+}
+.tab{
+
+    width: 100%;
+}
+.tab1{
+    width: 20%;
+    height: 200px;
+    background-color: #ffccff;
+    padding-left: 60px;
+}
+.tab2{
+    background-color: #ff9999;
+    color: #ffccff;
+    padding-left: 50px;
+    font-family: Arial Rounded MT;
+}
+
+
+
+
+
+
+
